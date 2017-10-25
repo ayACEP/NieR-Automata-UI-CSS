@@ -1,0 +1,13 @@
+@keyframes button {
+    from {width: 0%;}
+    to {width: 100%;}
+}
+
+@keyframes text {
+    from {color: black;}
+    to {color: white;}
+}
+
+.button {
+    animation: button 1s;
+}

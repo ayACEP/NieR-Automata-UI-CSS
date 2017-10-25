@@ -8,11 +8,12 @@ import colors from './colors'
 import css from './styles.css'
 import mission from './svg/mission.svg'
 import s from './svg/hline.svg'
+import style from './component/Button'
 
 const styles = {
     button: {
-        flex: '1',
-        marginLeft: '24px',
+        flex: '0 1 23%',
+        // marginLeft: '24px',
     }
 }
 
@@ -22,7 +23,7 @@ class App extends Component {
         return <div className='flex-column' style={{padding: '0px 32px', color: colors.dark}}>
             <div className='flex-row' style={{
                 padding: '16px 0px 12px 0px'}}>
-                <Callout />
+                <Callout style={{marginRight: '24px'}} />
                 <div className='flex-row' style={{flex: '1', justifyContent: 'space-between'}}>
                     <Button text='MAP' img='' style={styles.button} />
                     <Button text='QUEST' img='' style={styles.button} />
@@ -35,13 +36,13 @@ class App extends Component {
                 <H1 text='MAP' />
             </div>
             <div className='flex-row'>
-                <div className='flex-column' style={{flex: 3, justifyContent: 'space-between', paddingRight: '56px'}}>
-                    <div className='flex-row'>
-                        <Callout />
-                        <div className='flex-column' style={{flex: 1, marginLeft: '24px'}}>
+                <div className='flex-column' style={{flex: 3, justifyContent: 'space-between', marginRight: '56px'}}>
+                    <div className='flex-row' style={{height: '120px'}}>
+                        <Callout style={{marginRight: '24px'}} />
+                        <div className='flex-column' style={{flex: 1, justifyContent: 'space-between'}}>
                             <Button type='small' text='快速保存' img='' />
-                            <Button type='small' text='地图阅览模式' img='' style={{marginTop: '20px'}} />
-                            <Button type='small' text='地图图示一览' img='' style={{marginTop: '20px'}} />
+                            <Button type='small' text='地图阅览模式' img='' />
+                            <Button type='small' text='地图图示一览' img='' />
                         </div>
                     </div>
                     <div className='flex-column' style={{letterSpacing: '2px'}}>
