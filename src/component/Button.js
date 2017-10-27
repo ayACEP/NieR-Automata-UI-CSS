@@ -1,37 +1,49 @@
 import React, { Component } from 'react'
 import colors from '../colors'
 import style from './Button.css'
+import $ from 'jquery'
 
 class Button extends Component {
 
+    componentDidMount() {
+        $('.button-hover')
+        .on('mouseenter', (e) => {
+            $(e.target).siblings('.button-cover')
+                .animate({width: '100%'}, {queue: false, duration: 'fast'})
+        })
+        .on('mouseleave', (e) => {
+            $(e.target).siblings('.button-cover')
+                .animate({width: '0%'}, {queue: false, duration: 'fast'})
+        })
+    }
+
     render() {
-        const height = '28px'
+        const height = '38px'
         const small = this.props.type === 'small'
-        const imgWidth = small ? '16px' : '18px'
+        const imgWidth = small ? '24px' : '26px'
         const imgStyle = {
             width: imgWidth,
             height: imgWidth,
-            marginRight: '5px',
-            marginLeft: '5px',
+            marginRight: '7px',
+            marginLeft: '7px',
             backgroundColor: colors.dark
         }
         const textStyle = {
             color: colors.dark,
-            fontSize: small ? '14px' : '16px',
-            animation: 'text 500ms'
+            fontSize: small ? '20px' : '24px'
         }
         return <div className='flex-column' style={Object.assign({height: height}, this.props.style)}>
             <div style={{
                 flex: 1,
                 backgroundColor: colors.grayLight}}>
             </div>
-            <div style={{
+            <div className='button-cover' style={{
                 flex: 1,
+                width: '0px',
                 marginTop: '-' + height,
-                animation: 'button 1s',
                 backgroundColor: colors.grayStrong}}>
             </div>
-            <div style={{
+            <div className='button-hover' style={{
                 flex: 1,
                 marginTop: '-' + height,
                 alignItems: 'center'}}>

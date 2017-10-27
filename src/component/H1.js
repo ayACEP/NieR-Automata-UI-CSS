@@ -6,9 +6,9 @@ class H1 extends Component {
     render() {
         return <span style={Object.assign({
             color: colors.dark, 
-            fontSize: '32px',
+            fontSize: '50px',
             letterSpacing: '2px',
-            textShadow: `4px 4px ${colors.grayLight}`}, this.props.style)}>
+            textShadow: `6px 6px ${colors.grayLight}`}, this.props.style)}>
             {this.props.text}
         </span>
     }
