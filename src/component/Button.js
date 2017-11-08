@@ -5,18 +5,6 @@ import $ from 'jquery'
 
 class Button extends Component {
 
-    componentDidMount() {
-        $('.button-hover')
-        .on('mouseenter', (e) => {
-            $(e.target).siblings('.button-cover')
-                .animate({width: '100%'}, {queue: false, duration: 'fast'})
-        })
-        .on('mouseleave', (e) => {
-            $(e.target).siblings('.button-cover')
-                .animate({width: '0%'}, {queue: false, duration: 'fast'})
-        })
-    }
-
     render() {
         const height = '38px'
         const small = this.props.type === 'small'
@@ -28,28 +16,17 @@ class Button extends Component {
             marginLeft: '7px',
             backgroundColor: colors.dark
         }
-        const textStyle = {
-            color: colors.dark,
-            fontSize: small ? '20px' : '24px'
-        }
-        return <div className='flex-column' style={Object.assign({height: height}, this.props.style)}>
-            <div style={{
-                flex: 1,
-                backgroundColor: colors.grayLight}}>
-            </div>
-            <div className='button-cover' style={{
-                flex: 1,
-                width: '0px',
-                marginTop: '-' + height,
-                backgroundColor: colors.grayStrong}}>
-            </div>
-            <div className='button-hover' style={{
-                flex: 1,
-                marginTop: '-' + height,
+        return <div className='nier-button' style={Object.assign({
+            height: height,
+            fontSize: small ? '20px' : '24px',
+            alignItems: 'center',
+            backgroundColor: colors.grayLight
+            }, this.props.style)}>
+            <div className='' style={{
+                position: 'absolute',
                 alignItems: 'center'}}>
-                {this.props.img != null 
-                    && <img style={imgStyle} src={this.props.img} alt='' />}
-                <span style={textStyle}>{this.props.text}</span>
+                {this.props.img != null && <img style={imgStyle} src={this.props.img} alt='' />}
+                <span>{this.props.text}</span>
             </div>
         </div>
     }

@@ -7,6 +7,23 @@
     to {color: white;}
 }
 
-.button {
-    animation: button 1s;
+.nier-button:hover:before {
+    width: 100%;
+}
+
+.nier-button:before {
+    content: '';
+    width: 0%;
+    height: 100%;
+    background-color: #575757;
+    transition: all 300ms;
+}
+
+.nier-button {
+    color: #363636;
+    transition: all 300ms;
+}
+
+.nier-button:hover {
+    color: #f0f0f0;
 }
