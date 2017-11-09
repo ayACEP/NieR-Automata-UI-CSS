@@ -27,6 +27,7 @@ class Button extends Component {
                 {this.props.img != null && <img style={imgStyle} src={this.props.img} alt='' />}
                 <span>{this.props.text}</span>
             </div>
+            <div className='nier-button-side'></div>
         </a>
     }
 }
