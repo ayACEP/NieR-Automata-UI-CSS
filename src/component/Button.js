@@ -18,16 +18,11 @@ class Button extends Component {
         }
         return <a className='flex-row nier-button' style={Object.assign({
             height: height,
-            fontSize: small ? '20px' : '24px',
-            alignItems: 'center',
-            backgroundColor: colors.grayLight}, this.props.style)}>
-            <div className='' style={{
-                position: 'absolute',
-                alignItems: 'center'}}>
+            fontSize: small ? '20px' : '24px'}, this.props.style)}>
+            <div className='nier-button-content'>
                 {this.props.img != null && <img style={imgStyle} src={this.props.img} alt='' />}
                 <span>{this.props.text}</span>
             </div>
-            <div className='nier-button-side'></div>
         </a>
     }
 }

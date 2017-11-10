@@ -1,39 +1,37 @@
-@keyframes button {
-    from {width: 0%;}
-    to {width: 100%;}
-}
-
-@keyframes text {
-    from {color: black;}
-    to {color: white;}
-}
-
 .nier-button {
+    align-items: center;
     color: #363636;
-    transition: color 300ms;
+    padding: 7px 0px;
+    background-color: lightgrey;
+    background-clip: content-box;
+    border-width: 0px 0px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    transition: 300ms;
 }
 
 .nier-button:hover {
-    color: #f0f0f0;
     cursor: pointer;
+    color: white;
+    border-width: 3px 0px;
+    border-color: grey;
+    padding: 4px 0px;
+}
+
+.nier-button-content {
+    position: absolute;
+    align-items: center;
 }
 
 .nier-button::before {
     content: '';
     width: 0%;
     height: 100%;
-    background-color: #575757;
-    transition: width 300ms;
+    background: grey;
+    transition: 300ms;
 }
 
 .nier-button:hover::before {
     width: 100%;
-}
-
-.nier-button-side {
-    
-}
-
-.nier-button-side:hover {
-    
+    box-shadow: 2px 2px 5px grey;
 }
