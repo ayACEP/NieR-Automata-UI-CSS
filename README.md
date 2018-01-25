@@ -1,1 +1,2 @@
-# nier-automata-ui
+# NieR-Automata-UI-CSS
+Nier-Automata UI CSS implemention
